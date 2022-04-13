@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Database\Eloquent\Builder;
@@ -21,7 +22,7 @@ class Product extends Model
 
     public function orders()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Order::class);
     }
 
     public function scopeArrangements(Builder $query)
