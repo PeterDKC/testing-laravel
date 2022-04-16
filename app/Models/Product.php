@@ -4,13 +4,14 @@ namespace App\Models;
 
 use App\Models\Order;
 use App\Models\Product;
+use App\Traits\HasEnumProperties;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, HasEnumProperties;
 
     protected $fillable = [
         'name',
@@ -18,6 +19,12 @@ class Product extends Model
         'type',
         'price',
         'on_hand',
+    ];
+
+    protected $enumTypes = [
+        'Arrangement',
+        'Cut Flower',
+        'Misc',
     ];
 
     public function orders()

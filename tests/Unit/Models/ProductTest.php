@@ -19,7 +19,7 @@ class ProductTest extends TestCase
             'type' => 'Arrangement',
         ]);
         $cutFlowerProduct = Product::factory()->create([
-            'type' => 'Transmission Lines',
+            'type' => 'Cut Flower',
         ]);
 
         // act

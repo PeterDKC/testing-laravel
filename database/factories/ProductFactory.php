@@ -18,7 +18,7 @@ class ProductFactory extends Factory
         return [
             'name'        => $this->faker->word(),
             'description' => $this->faker->sentence(),
-            'type'        => Arr::random(['Arrangement', 'Cut Flower', 'Misc']),
+            'type'        => Arr::random(Product::getEnum('types')),
             'price'       => rand(1000, 20000),
             'on_hand'     => rand(0, 100),
         ];
